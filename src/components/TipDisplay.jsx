@@ -11,6 +11,7 @@ const TipDisplay = () => {
                 <span>Total</span><span><h2>$0.00</h2></span>
                 <p>/ person</p>
             </div>
+            <button className="reset-btn">RESET</button>
         </div>
     )
 }
