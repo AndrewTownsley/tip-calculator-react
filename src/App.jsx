@@ -6,25 +6,32 @@ import React, { useState } from "react";
 
 const App = () => {
     // Set State for Initial Bill Amount.
-    const [bill, setBill] = useState(0);
+    const [bill, setBill] = useState('');
+    // Set State for Initial Tip Percentage.
+    const [percent, setPercent] = useState(.2)
+    // Set State for Initial Number of People.
+    const [people, setPeople] = useState(1);
+
     // Set State for Initial Tip Amount.
     const [tipAmount, setTipAmount] = useState(0);
-    // Set State for Initial Tip Percentage.
-    const [percent, setPercent] = useState(0)
-    // Set State for Initial Number of People.
-    const [people, setPeople] = useState(0);
     // Set State for Total per Person
-    const [splitTip, setSplitTip] = useSTate(0);
+    const [splitTip, setSplitTip] = useState(0);
 
     const calculateTip = (e) => {
         e.preventDefault();
-        bill * percent = tipAmount
-        tipAmount / people = splitTip;
+
+        if (bill !== '' && percent !== '') {
+            setTipAmount(bill * percent);
+            setSplitTip(tipAmount / people)
+            console.log(tipAmount);
+            console.log(splitTip);
+        }
+
     }
 
     return (
         <div className="App">
-            <form className="bill-input">
+            <form onChange={calculateTip} className="bill-input">
                 <label htmlFor="bill">Bill Amount</label>
                 <input
                     value={bill}
@@ -49,6 +56,7 @@ const App = () => {
                 <label htmlFor="guest">Number of people</label>
                 <input
                     value={people}
+                    onChange={(e) => setPeople(e.target.value)}
                     type="text"
                     name="guest"
                     id="guest"
@@ -69,3 +77,8 @@ const App = () => {
     )
 }
 export default App;
+
+
+
+        // const tipAmount = bill * percent;
+        // const splitTip = tipAmount / people;
