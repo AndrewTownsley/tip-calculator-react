@@ -1,17 +1,21 @@
 
-const TipDisplay = () => {
+const TipDisplay = ({ tipAmount, splitTip, splitTotal, reset }) => {
 
     return (
         <div className="tip-display">
             <div className="tip-amount">
-                <span>Tip Amount</span><span><h2>$0.00</h2></span>
+                <span>Tip Amount</span><span><h2>{tipAmount}</h2></span>
+                <p>/ person</p>
+            </div>
+            <div className="person-tip">
+                <span>Tip</span><span><h2>{splitTip}</h2></span>
                 <p>/ person</p>
             </div>
             <div className="person-total">
-                <span>Total</span><span><h2>$0.00</h2></span>
+                <span>Total + Tip</span><span><h2>{splitTotal}</h2></span>
                 <p>/ person</p>
             </div>
-            <button className="reset-btn">RESET</button>
+            <button onClick={reset} className="reset-btn">RESET</button>
         </div>
     )
 }

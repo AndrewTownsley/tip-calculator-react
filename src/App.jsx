@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import TipButtons from "./components/TipButtons";
+import TipDisplay from "./components/TipDisplay";
 // import BillInput from "./components/BillInput";
-// import TipButtons from "./components/TipButtons";
 // import GuestNumber from "./components/GuestNumber";
-// import TipDisplay from "./components/TipDisplay";
 
 const App = () => {
     // Set State for Initial Bill Amount.
@@ -48,17 +48,7 @@ const App = () => {
                     id="bill"
                     placeholder="$" />
             </form>
-            <div className="tip-btn-container">
-                <p>select tip %</p>
-                <div className="tip-btns">
-                    <button onClick={(e) => setPercent(.05)} className="tip-btn">5%</button>
-                    <button onClick={(e) => setPercent(.10)} className="tip-btn">10%</button>
-                    <button onClick={(e) => setPercent(.15)} className="tip-btn">15%</button>
-                    <button onClick={(e) => setPercent(.10)} className="tip-btn">20%</button>
-                    <button onClick={(e) => setPercent(.25)} className="tip-btn">25%</button>
-                    <button onClick={(e) => setPercent(.30)} className="tip-btn">30%</button>
-                </div>
-            </div>
+            <TipButtons setPercent={setPercent} />
             <div className="guest-input">
                 <label htmlFor="guest">Number of people</label>
                 <input
@@ -69,21 +59,11 @@ const App = () => {
                     id="guest"
                     placeholder="$" />
             </div>
-            <div className="tip-display">
-                <div className="tip-amount">
-                    <span>Tip Amount</span><span><h2>{tipAmount}</h2></span>
-                    <p>/ person</p>
-                </div>
-                <div className="person-tip">
-                    <span>Tip</span><span><h2>{splitTip}</h2></span>
-                    <p>/ person</p>
-                </div>
-                <div className="person-total">
-                    <span>Total + Tip</span><span><h2>{splitTotal}</h2></span>
-                    <p>/ person</p>
-                </div>
-                <button onClick={reset} className="reset-btn">RESET</button>
-            </div>
+            <TipDisplay
+                tipAmount={tipAmount}
+                splitTip={splitTip}
+                splitTotal={splitTotal}
+                reset={reset} />
         </div>
     )
 }
