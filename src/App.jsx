@@ -8,25 +8,29 @@ const App = () => {
     // Set State for Initial Bill Amount.
     const [bill, setBill] = useState('');
     // Set State for Initial Tip Percentage.
-    const [percent, setPercent] = useState(.2)
+    const [percent, setPercent] = useState('')
     // Set State for Initial Number of People.
-    const [people, setPeople] = useState(1);
+    const [people, setPeople] = useState(1.0);
 
     // Set State for Initial Tip Amount.
     const [tipAmount, setTipAmount] = useState(0);
     // Set State for Total per Person
     const [splitTip, setSplitTip] = useState(0);
+    // Set State for the reset Btn.  Sart with the button disabled, then enable it onClick.  reset all the initial values.
 
     const calculateTip = (e) => {
         e.preventDefault();
 
         if (bill !== '' && percent !== '') {
-            setTipAmount(bill * percent);
-            setSplitTip(tipAmount / people)
-            console.log(tipAmount);
-            console.log(splitTip);
+            setTipAmount((bill * percent) * 10);
+            setSplitTip((tipAmount / people) * 10)
         }
+    }
 
+    const reset = () => {
+        setBill('')
+        setPercent('')
+        setPeople(1)
     }
 
     return (
@@ -44,12 +48,12 @@ const App = () => {
             <div className="tip-btn-container">
                 <p>select tip %</p>
                 <div className="tip-btns">
-                    <button className="tip-btn">5%</button>
-                    <button className="tip-btn">10%</button>
-                    <button className="tip-btn">15%</button>
-                    <button className="tip-btn">20%</button>
-                    <button className="tip-btn">25%</button>
-                    <button className="tip-btn">30%</button>
+                    <button onClick={(e) => setPercent(.05)} className="tip-btn">5%</button>
+                    <button onClick={(e) => setPercent(.10)} className="tip-btn">10%</button>
+                    <button onClick={(e) => setPercent(.15)} className="tip-btn">15%</button>
+                    <button onClick={(e) => setPercent(.10)} className="tip-btn">20%</button>
+                    <button onClick={(e) => setPercent(.25)} className="tip-btn">25%</button>
+                    <button onClick={(e) => setPercent(.30)} className="tip-btn">30%</button>
                 </div>
             </div>
             <div className="guest-input">
@@ -71,7 +75,7 @@ const App = () => {
                     <span>Total</span><span><h2>{splitTip}</h2></span>
                     <p>/ person</p>
                 </div>
-                <button className="reset-btn">RESET</button>
+                <button onClick={reset} className="reset-btn">RESET</button>
             </div>
         </div>
     )
