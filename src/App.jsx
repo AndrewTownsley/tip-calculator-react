@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header";
 import TipButtons from "./components/TipButtons";
 import TipDisplay from "./components/TipDisplay";
-// import BillInput from "./components/BillInput";
-// import GuestNumber from "./components/GuestNumber";
 
 const App = () => {
     // Set State for Initial Bill Amount.
@@ -38,32 +38,38 @@ const App = () => {
 
     return (
         <div className="App">
-            <form className="bill-input">
-                <label htmlFor="bill">Bill Amount</label>
-                <input
-                    value={bill}
-                    onChange={(e) => setBill(e.target.value)}
-                    // type="text"
-                    name="bill-amount"
-                    id="bill"
-                    placeholder="$" />
-            </form>
-            <TipButtons setPercent={setPercent} />
-            <div className="guest-input">
-                <label htmlFor="guest">Number of people</label>
-                <input
-                    value={people}
-                    onChange={(e) => setPeople(e.target.value)}
-                    type="text"
-                    name="guest"
-                    id="guest"
-                    placeholder="$" />
+            <Header />
+            <div className="calculator">
+                <div className="bill-input-container">
+                    <TipButtons setPercent={setPercent} />
+                    <form className="bill-input">
+                        <label htmlFor="bill">Bill Amount</label>
+                        <input
+                            value={bill}
+                            onChange={(e) => setBill(e.target.value)}
+                            // type="text"
+                            name="bill-amount"
+                            id="bill"
+                            placeholder="$" />
+                    </form>
+                    <div className="guest-input">
+                        <label htmlFor="guest">Number of people</label>
+                        <input
+                            value={people}
+                            onChange={(e) => setPeople(e.target.value)}
+                            type="text"
+                            name="guest"
+                            id="guest"
+                            placeholder="$" />
+                    </div>
+                </div>
             </div>
             <TipDisplay
                 tipAmount={tipAmount}
                 splitTip={splitTip}
                 splitTotal={splitTotal}
-                reset={reset} />
+                reset={reset}
+            />
         </div>
     )
 }
