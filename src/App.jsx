@@ -51,8 +51,6 @@ const App = () => {
                             name="bill-amount"
                             id="bill"
                             placeholder="$" />
-                    </form>
-                    <div className="guest-input">
                         <label htmlFor="guest">Number of people</label>
                         <input
                             value={people}
@@ -61,7 +59,7 @@ const App = () => {
                             name="guest"
                             id="guest"
                             placeholder="$" />
-                    </div>
+                    </form>
                 </div>
             </div>
             <TipDisplay
