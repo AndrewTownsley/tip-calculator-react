@@ -43,22 +43,26 @@ const App = () => {
                 <div className="bill-input-container">
                     <TipButtons setPercent={setPercent} />
                     <form className="bill-input">
-                        <label htmlFor="bill">Bill Amount</label>
-                        <input
-                            value={bill}
-                            onChange={(e) => setBill(e.target.value)}
-                            // type="text"
-                            name="bill-amount"
-                            id="bill"
-                            placeholder="$" />
-                        <label htmlFor="guest">Number of people</label>
-                        <input
-                            value={people}
-                            onChange={(e) => setPeople(e.target.value)}
-                            type="text"
-                            name="guest"
-                            id="guest"
-                            placeholder="$" />
+                        <div className="input-section-bill">
+                            <label htmlFor="bill">Bill Amount</label>
+                            <input
+                                value={bill}
+                                onChange={(e) => setBill(e.target.value)}
+                                // type="text"
+                                name="bill-amount"
+                                id="bill"
+                                placeholder="$" />
+                        </div>
+                        <div className="input-section-guest">
+                            <label htmlFor="guest">Number of people</label>
+                            <input
+                                value={people}
+                                onChange={(e) => setPeople(e.target.value)}
+                                type="text"
+                                name="guest"
+                                id="guest"
+                                placeholder="$" />
+                        </div>
                     </form>
                 </div>
             </div>
