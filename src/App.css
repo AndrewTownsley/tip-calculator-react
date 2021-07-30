@@ -43,10 +43,11 @@ h1 {
 .tip-btn-container {
   display: flex;
   flex-direction: column;
+  margin-top: 0.5rem;
 }
 
 .tip-btns {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
