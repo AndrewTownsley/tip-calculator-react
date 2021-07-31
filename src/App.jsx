@@ -67,19 +67,14 @@ const App = () => {
                     <TipButtons setPercent={setPercent} />
 
                 </div>
+                <TipDisplay
+                    tipAmount={tipAmount}
+                    splitTip={splitTip}
+                    splitTotal={splitTotal}
+                    reset={reset}
+                />
             </div>
-            <TipDisplay
-                tipAmount={tipAmount}
-                splitTip={splitTip}
-                splitTotal={splitTotal}
-                reset={reset}
-            />
         </div>
     )
 }
 export default App;
-
-
-
-        // const tipAmount = bill * percent;
-        // const splitTip = tipAmount / people;

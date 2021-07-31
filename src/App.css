@@ -27,8 +27,8 @@ h1 {
 
 .header {
   background-color: #def2f1;
-  width: 100%;
-  padding: 1rem;
+  /* width: 100%; */
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -36,7 +36,8 @@ h1 {
   background-color: #faffff;
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
+  align-items: center;
+  padding: 1rem;
   border-radius: 40px 40px 0 0;
 }
 
@@ -46,11 +47,17 @@ h1 {
   margin-top: 0.5rem;
 }
 
+
+
 .tip-btns {
   margin-top: 0.5rem;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;   align-items: center;
   gap: 1rem;
 }
 
@@ -59,7 +66,7 @@ h1 {
   border: none;
   border-radius: 5px;
   padding: 5px;
-  width: 7rem;
+  width: 6rem;
   height: 40px;
   font-size: 1rem;
   font-weight: 700;
@@ -96,7 +103,6 @@ h1 {
 
 .bill-input label {
   margin: 0.25rem 0;
-  padding: 5px;
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -124,7 +130,9 @@ h1 {
 }
 
 .tip-display {
-  width: 75%;
+  background-color: #faffff;
+  width: 80%;
+  /* margin: 0 2rem; */
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
@@ -162,4 +170,39 @@ h1 {
   background-color: #def2f1;
   color: #3aafa9;
   border: 2px solid #3aafa9;
+}
+
+/* -------------------Media Queries------------------- */
+
+@media(min-width: 800px) {
+
+  .calculator {
+    width: 600px;
+    border-radius: 40px 40px 0 0 ;
+  }
+
+  .tip-btn-container {
+    max-width: 75vw;
+    align-items: center;
+  }
+
+  .tip-btns {
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;  
+  }
+
+  .tip-display {
+    width: 600px;
+    background-color: #faffff;
+    border-radius: 0 0 40px 40px;
+  }
+  
+  .tip-amount, .person-tip, .person-total {
+    justify-content: space-between;
+    align-items: right;
+    max-width: 450px;
+    margin: 1rem 4rem;
+  }
 }
