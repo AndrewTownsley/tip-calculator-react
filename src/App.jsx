@@ -5,18 +5,11 @@ import TipButtons from "./components/TipButtons";
 import TipDisplay from "./components/TipDisplay";
 
 const App = () => {
-    // Set State for Initial Bill Amount.
     const [bill, setBill] = useState('');
-    // Set State for Initial Tip Percentage.
     const [percent, setPercent] = useState('')
-    // Set State for Initial Number of People.
     const [people, setPeople] = useState(1.0);
-
-    // Set State for Initial Tip Amount.
     const [tipAmount, setTipAmount] = useState(0);
-    // Set State for Total per Person
     const [splitTip, setSplitTip] = useState(0);
-    // Set State for total bill plus total tip per person.
     const [splitTotal, setSplitTotal] = useState(0);
 
     useEffect(() => {
@@ -47,7 +40,6 @@ const App = () => {
                         <input
                             value={bill}
                             onChange={(e) => setBill(e.target.value)}
-                            // type="text"
                             name="bill-amount"
                             id="bill"
                             placeholder="$" />
