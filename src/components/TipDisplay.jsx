@@ -5,24 +5,24 @@ const TipDisplay = ({ tipAmount, splitTip, splitTotal, reset }) => {
         <div className="tip-display">
             <div className="tip-amount">
                 <span>
-                    <h4>Tip Amount</h4>
+                    <h3>Tip Amount</h3>
                     <p>/ person</p>
                 </span>
-                <span><h2>${tipAmount}</h2></span>
+                <span><h3>${tipAmount}</h3></span>
             </div>
             <div className="person-tip">
                 <span>
-                    <h4>Tip</h4>
+                    <h3>Tip</h3>
                     <p>/ person</p>
                 </span>
-                <span><h2>${splitTip}</h2></span>
+                <span><h3>${splitTip}</h3></span>
             </div>
             <div className="person-total">
                 <span>
-                    <h4>Total + Tip</h4>
+                    <h3>Total + Tip</h3>
                     <p>/ person</p>
                 </span>
-                <span><h2>${splitTotal}</h2></span>
+                <span><h3>${splitTotal}</h3></span>
             </div>
             <button onClick={reset} className="reset-btn">RESET</button>
         </div>

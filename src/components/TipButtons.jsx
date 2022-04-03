@@ -3,7 +3,7 @@ const TipButtons = ({ setPercent }) => {
 
     return (
         <div className="tip-btn-container">
-            <p>select tip %</p>
+            <h2>select tip %</h2>
             <div className="tip-btns">
 
                 <button onClick={(e) => setPercent(.15)} className="tip-btn">15%</button>
