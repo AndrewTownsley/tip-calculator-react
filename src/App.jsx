@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Header from "./components/Header";
 import TipButtons from "./components/TipButtons";
 import TipDisplay from "./components/TipDisplay";
 
@@ -32,8 +31,8 @@ const App = () => {
 
     return (
         <div className="App">
-            <Header />
             <div className="calculator">
+                <h1>Quick Tipper</h1>
                 <form className="bill-input">
                     <div className="input-section-bill">
                         <label htmlFor="bill">Bill Amount</label>
